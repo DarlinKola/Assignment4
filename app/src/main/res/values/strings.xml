@@ -1,3 +1,21 @@
 <resources>
-    <string name="app_name">Dessert App</string>
+    <string name="app_name">SelectionActivity</string>
+    <string name="activityHeader">"Select Bunny"</string>
+    <string name="selectActivityHeader">"Selected Bunny"</string>
+    <string-array name="descriptions">
+        <item>Plain</item>
+        <item>Chocolate</item>
+        <item>Strawberry</item>
+        <item>Caramel</item>
+        <item>Caramel1</item>
+        <item>Caramel2</item>
+        <item>Caramel3</item>
+        <item>Caramel4</item>
+        <item>Caramel5</item>
+        <item>Caramel6</item>
+    </string-array>
+    <string name = "select"> Select Cheesecake </string>
+    <string name = "imageText"> Good Cheesecake </string>
+    <string name = "SecondActivity"> DisplayAcivity </string>
+    <string name = "SecondButton"> Back </string>
 </resources>
