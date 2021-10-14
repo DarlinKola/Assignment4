@@ -1,44 +1,37 @@
-package edu.temple.assignment4
+package edu.temple.desserrtapp
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
 
 class DisplayActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_display)
 
-        //Sets up title
-        setTitle("Select a cheesecake")
+        // Set the title for the activity.
+        // This can also be done in the manifest
+        supportActionBar?.title = "Display-er"
 
-        //ImageView from the Second Activity
-        val imageView2 = findViewById<ImageView>(R.id.imageView2)
-        //TextView from the Second Activity
-        val textView2 = findViewById<TextView>(R.id.textView2)
+        val imageView = findViewById<ImageView>(R.id.imageView)
+        val textView = findViewById<TextView>(R.id.textView)
 
-        //Sets up TextView
-        val description = intent.getStringExtra("Description")
-        textView2.setText(description)
+        // Fetch the intent used to launch this activity
+        val item = intent.getParcelableExtra<Item>(SelectionActivity.ITEM_KEY)
 
-        //Set up ImageView and connect it with images
-        val imageView: ImageView = findViewById(R.id.imageView2)
-        val bundle: Bundle? = intent.extras
-        if( bundle != null) {
-            val putImage: Int = bundle.getInt("image")
-            imageView2.setImageResource(putImage)
-        }
+        /**
+         * Use Item object found in intent to set view values
+         *
+         * Using ?.let{} is equivalent to:
+         *  if (item != null) {
+         *      imageView.setImageResource(item.resourceId)
+         *      textView.text = item.description
+         *  }
+         */
 
-        //Moves back to MainActivity aka main screen
-        findViewById<Button>(R.id.button).setOnClickListener(){
-            finish()
-        }
+        item?.resourceId?.let { imageView.setImageResource(it) }
+        item?.description?.let { textView.text = it }
+
     }
-
 }
