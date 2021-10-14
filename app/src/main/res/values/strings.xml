@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">SelectionActivity</string>
-    <string name="activityHeader">"Select Bunny"</string>
-    <string name="selectActivityHeader">"Selected Bunny"</string>
+    <string name="activityHeader">"Select Cheesecake"</string>
+    <string name="selectActivityHeader">"Selected Cheesecake"</string>
     <string-array name="descriptions">
         <item>Plain</item>
         <item>Chocolate</item>
